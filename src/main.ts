@@ -1,5 +1,5 @@
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
-
 import { AppModule } from './app.module';
 import { CLIENT_URL, PORT } from './common/constants/env.constants';
 
@@ -12,9 +12,9 @@ async function bootstrap() {
     credentials: true,
   });
   app.setGlobalPrefix('api');
-  const port = Number(PORT ?? 3000);
+  const port = Number(PORT ?? 4100);
   await app.listen(port, '0.0.0.0');
 
-  console.log(`Server started on port ${PORT ?? 3000}`);
+  console.log(`Server started on port ${PORT ?? 4100}`);
 }
 bootstrap();
